@@ -15,11 +15,20 @@ provider:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
+  - serverless-api-gateway-caching
+
+custom:
+  # Enable or disable caching globally
+  apiGatewayCaching:
+    enabled: true
 
 functions:
   githubProjectRepos:
     handler: app/handler.githubProjectRepos
     events:
-      - httpApi:
-          path: /githubrepos
+      - http:
+          path: githubrepos
           method: get
+          cors: true
+          caching:
+            enabled: true
