@@ -19,6 +19,6 @@ functions:
   githubProjectRepos:
     handler: app/handler.githubProjectRepos
     events:
-      - httpApi:
+      - http:
           path: githubProjectRepos
           method: get
