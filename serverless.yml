@@ -10,7 +10,7 @@ provider:
     API_KEY: ${ssm:/github_api_key~true}
   apiGateway:
     shouldStartNameWithService: true
-  stage: production
+    
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
