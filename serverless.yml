@@ -16,11 +16,19 @@ plugins:
   - serverless-plugin-typescript
   - serverless-offline
   - serverless-api-gateway-caching
+  - serverless-domain-manager
 
 custom:
-  # Enable or disable caching globally
   apiGatewayCaching:
     enabled: true
+  customDomain:
+    domainName: api.hufghani.dev
+    certificateName: hufghani.dev
+    createRoute53Record: false
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
+    apiType: rest
+    autoDomain: false
 
 functions:
   githubProjectRepos:
