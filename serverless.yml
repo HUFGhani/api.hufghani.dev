@@ -6,11 +6,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
+  stage: production
   environment:
     API_KEY: ${ssm:/github_api_key~true}
   apiGateway:
     shouldStartNameWithService: true
-    
+
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
