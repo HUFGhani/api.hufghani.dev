@@ -1,0 +1,19 @@
+{
+  "name": "api-hufghani",
+  "version": "1.0.0",
+  "description": "serverless api for hufghani.dev",
+  "main": "handler.ts",
+  "author": "Hamza Ghani",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.72",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0"
+  }
+}
