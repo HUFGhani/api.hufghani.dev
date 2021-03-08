@@ -4,5 +4,5 @@ import { GithubController } from './controller/github'
 const githubController = new GithubController()
 
 export const github: Handler = async (event: any, context: Context) => {
-  return await githubController.ProjectRepos(event, context)
+  return await githubController.githubData(event, context)
 }

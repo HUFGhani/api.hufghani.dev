@@ -8,7 +8,7 @@ const graphQLClient = new GraphQLClient(endpoint, {
 })
 
 export class GithubService {
-  async getProjectReposData(): Promise<object> {
+  async getGitHubContributions(): Promise<object> {
     const query = gql`
       query GITHUB_CONTRIBUTIONS_QUERY {
         viewer {
@@ -21,6 +21,34 @@ export class GithubService {
                   contributionCount
                   date
                   weekday
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+    return await graphQLClient.request(query)
+  }
+
+  async getGitHubRepositories(): Promise<object> {
+    const query = gql`
+      query GITHUB_TOP_LANGUAGES_QUERY {
+        viewer {
+          repositories(
+            last: 50
+            isFork: false
+            orderBy: { field: UPDATED_AT, direction: ASC }
+          ) {
+            nodes {
+              name
+              description
+              url
+              updatedAt
+              languages(first: 5) {
+                nodes {
+                  color
+                  name
                 }
               }
             }

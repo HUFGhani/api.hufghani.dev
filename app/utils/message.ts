@@ -5,11 +5,16 @@ interface Response {
 
 enum StatusCode {
   success = 200,
+  failure = 500,
 }
 
 export class MessageUtil {
   success(data: object): Response {
     return this.messageBulider(StatusCode.success, 0, 'success', data)
+  }
+
+  failure(data: object): Response {
+    return this.messageBulider(StatusCode.failure, 1, 'failure', data)
   }
 
   private messageBulider(

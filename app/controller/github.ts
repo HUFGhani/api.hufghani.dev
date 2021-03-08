@@ -6,7 +6,16 @@ const githubService = new GithubService()
 const messageUtil = new MessageUtil()
 
 export class GithubController {
-  async ProjectRepos(_event: any, _context: Context): Promise<any> {
-    return messageUtil.success(await githubService.getProjectReposData())
+  async githubData(event: any, _context: Context): Promise<any> {
+    const { GitHubContributions, GitHubRepositories } = event
+
+    if (GitHubContributions) {
+      return messageUtil.success(await githubService.getGitHubContributions())
+    }
+
+    if (GitHubRepositories) {
+      return messageUtil.success(await githubService.getGitHubRepositories())
+    }
+    return messageUtil.failure({})
   }
 }
