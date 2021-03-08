@@ -31,11 +31,21 @@ custom:
     autoDomain: false
 
 functions:
-  github:
-    handler: app/handler.github
+  githubContributions:
+    handler: app/handler.githubContributions
     events:
       - http:
-          path: github
+          path: github/contributions
+          method: get
+          cors: true
+          caching:
+            enabled: true
+
+  githubRepositories:
+    handler: app/handler.githubRepositories
+    events:
+      - http:
+          path: github/repositories
           method: get
           cors: true
           caching:

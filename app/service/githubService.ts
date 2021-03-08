@@ -28,7 +28,8 @@ export class GithubService {
         }
       }
     `
-    return await graphQLClient.request(query)
+    const res = await graphQLClient.request(query)
+    return res.viewer.contributionsCollection.contributionCalendar
   }
 
   async getGitHubRepositories(): Promise<object> {
@@ -56,6 +57,7 @@ export class GithubService {
         }
       }
     `
-    return await graphQLClient.request(query)
+    const res = await graphQLClient.request(query)
+    return res.viewer
   }
 }
