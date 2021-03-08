@@ -31,11 +31,11 @@ custom:
     autoDomain: false
 
 functions:
-  githubProjectRepos:
-    handler: app/handler.githubProjectRepos
+  github:
+    handler: app/handler.github
     events:
       - http:
-          path: githubrepos
+          path: github
           method: get
           cors: true
           caching:
