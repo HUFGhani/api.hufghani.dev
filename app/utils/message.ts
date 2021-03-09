@@ -1,5 +1,6 @@
 interface Response {
   statusCode: number
+  headers: object
   body: string
 }
 
@@ -25,6 +26,10 @@ export class MessageUtil {
   ): Response {
     return {
       statusCode: statusCode,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify({
         code: code,
         message: message,
