@@ -6,7 +6,6 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
-  variablesResolutionMode: 20210326
   stage: ${opt:stage, self:custom.defaultStage}
   environment:
     API_KEY: ${ssm:/github_api_key~true}
