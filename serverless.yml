@@ -34,7 +34,6 @@ custom:
     apiType: rest
     autoDomain: false
   defaultStage: local
-  profile: default
   localstack:
     stages:
       - local
