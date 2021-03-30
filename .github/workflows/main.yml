@@ -18,9 +18,9 @@ jobs:
         uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn global add serverless && yarn
+      - run: yarn
       - name: serverless deploy
-        run: serverless deploy --stage production
+        run: yarn serverless deploy --stage production
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
