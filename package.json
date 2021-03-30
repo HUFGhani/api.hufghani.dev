@@ -16,6 +16,7 @@
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "serverless-api-gateway-caching": "^1.6.1",
-    "serverless-domain-manager": "^5.1.0"
+    "serverless-domain-manager": "^5.1.0",
+    "serverless-localstack": "^0.4.30"
   }
 }
