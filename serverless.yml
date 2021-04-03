@@ -16,7 +16,6 @@ provider:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-  - serverless-api-gateway-caching
   - serverless-domain-manager
   - serverless-localstack
 
@@ -51,8 +50,6 @@ functions:
           path: github/contributions
           method: get
           cors: true
-          caching:
-            enabled: true
 
   githubRepositories:
     handler: app/handler.githubRepositories
@@ -61,5 +58,3 @@ functions:
           path: github/repositories
           method: get
           cors: true
-          caching:
-            enabled: true
