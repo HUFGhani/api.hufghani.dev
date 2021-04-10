@@ -1,6 +1,7 @@
 service: api-hufghani
 
 frameworkVersion: '2'
+variablesResolutionMode: 20210326
 
 provider:
   name: aws
@@ -9,7 +10,7 @@ provider:
   stage: ${opt:stage, self:custom.defaultStage}
   region: us-east-1
   environment:
-    API_KEY: ${ssm:/github_api_key~true}
+    API_KEY: ${ssm:/github_api_key}
   apiGateway:
     shouldStartNameWithService: true
 

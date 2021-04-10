@@ -37,7 +37,7 @@ export class GithubService {
       query GITHUB_TOP_LANGUAGES_QUERY {
         viewer {
           repositories(
-            last: 50
+            last: 100
             isFork: false
             orderBy: { field: UPDATED_AT, direction: ASC }
           ) {
