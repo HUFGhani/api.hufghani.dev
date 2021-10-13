@@ -19,7 +19,6 @@ plugins:
   - serverless-offline
   - serverless-domain-manager
   - serverless-localstack
-  - serverless-plugin-diff
 
 custom:
   apiGatewayCaching:
