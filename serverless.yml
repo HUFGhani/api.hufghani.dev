@@ -27,7 +27,7 @@ custom:
     domainName: api.hufghani.dev
     stage: ${opt:stage, self:custom.defaultStage}
     certificateName: hufghani.dev
-    createRoute53Record: false
+    createRoute53Record: true
     endpointType: 'regional'
     securityPolicy: tls_1_2
     apiType: rest
