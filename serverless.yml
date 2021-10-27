@@ -19,7 +19,6 @@ plugins:
   - serverless-offline
   - serverless-domain-manager
   - serverless-localstack
-  - serverless-lambda-edge-pre-existing-cloudfront
 
 custom:
   apiGatewayCaching:
