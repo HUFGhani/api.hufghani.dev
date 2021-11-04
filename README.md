@@ -18,7 +18,7 @@ yarn install
 ### To Add Github API key to System Manger
 
 ```
-aws --region us-east-1 --endpoint-url=http://localhost:4566 ssm put-parameter --name "github_api_key" --value <API_KEY> --type "SecureString"
+aws --region eu-west-2 --endpoint-url=http://localhost:4566 ssm put-parameter --name "github_api_key" --value <API_KEY> --type "SecureString"
 ```
 
 ### To Deploy to LocalStack
