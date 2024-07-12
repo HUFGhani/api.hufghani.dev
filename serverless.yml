@@ -1,12 +1,11 @@
 service: api-hufghani
 
-frameworkVersion: '2'
-variablesResolutionMode: 20210326
+frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
+  lambdaHashingVersion: 20200924
   stage: ${opt:stage, self:custom.defaultStage}
   region: eu-west-2
   environment:
@@ -15,17 +14,17 @@ provider:
     shouldStartNameWithService: true
 
 plugins:
-  - serverless-plugin-typescript
-  - serverless-offline
-  - serverless-domain-manager
   - serverless-localstack
+  - serverless-plugin-typescript
+  - serverless-domain-manager
+  - serverless-offline
 
 custom:
   apiGatewayCaching:
     enabled: true
   customDomain:
     domainName: api.hufghani.dev
-    stage: ${opt:stage, self:custom.defaultStage}
+    stage: ${self:provider.stage}
     certificateName: hufghani.dev
     createRoute53Record: true
     endpointType: 'regional'
